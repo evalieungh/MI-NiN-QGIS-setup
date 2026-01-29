@@ -1,0 +1,3 @@
+1, Ja
+2, Nei
+NULL, <NULL>

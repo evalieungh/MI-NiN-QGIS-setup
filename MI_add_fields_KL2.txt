@@ -1,0 +1,25 @@
+# run in QGIS Python console
+from qgis.core import QgsProject, QgsField
+from PyQt5.QtCore import QVariant
+
+# List of new fields to add
+fields_to_add = [
+    ("Kartlegger", QVariant.String),
+    ("Naturtype_utvalgskartlegging", QVariant.String),
+	("Beskrivelse (fysiske inngrep, observerbare egenskaper som ikke fanges opp av variabler)", QVariant.String),
+	("Usikkerhetsbeskrivelse (faglig usikkerhet til identifisering av Naturtype eller fastsetting av lokalitetskvalitet)", QVariant.String),
+	("Merknad (publiseres ikke)", QVariant.String)
+]
+
+# Get the active layer
+layer = iface.activeLayer()
+
+# Start editing the layer
+layer.startEditing()
+
+# Add new fields
+for field_name, field_type in fields_to_add:
+    layer.addAttribute(QgsField(field_name, field_type))
+
+# Commit changes
+layer.commitChanges()

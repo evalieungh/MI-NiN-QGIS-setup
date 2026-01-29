@@ -1,0 +1,4 @@
+1, KB naturgitt bartredominans
+2, KL naturgitt lauvtredominans
+3, KE naturgitt edellauvtredominans
+4, KV naturgitt dominans av pil og vier

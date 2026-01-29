@@ -1,0 +1,32 @@
+from qgis.core import QgsProject, QgsField
+from PyQt5.QtCore import QVariant
+
+# List of new fields to add
+fields_to_add = [
+    ("Kartlegger", QVariant.String),
+    ("Naturtype_MI", QVariant.String),
+    ("RM-SO Bioklimatisk sone", QVariant.String),
+    ("RM-SE Bioklimatisk seksjon", QVariant.String),
+    ("SA-AA Naturgitt dominerende treslagsgruppe", QVariant.String),
+	("AD-ST Suksesjonsstadium i skog [NA|(d)|e|efy, d kun for kalk/sand/flomskog]", QVariant.String),
+    ("KM-DA Dødvedandel [splitt AD-ST_e for trinn 2|3]", QVariant.Int),
+	("LM-HR_C Hevdregime slått [kun i semi-naturlig eng]", QVariant.String),
+    ("LM-BK_A Ultramafisk berggrunn (Olivinskog)", QVariant.String),
+    ("Kalklindeskog [splittevariabel]", QVariant.String),
+	("Beskrivelse (fysiske inngrep, observerbare egenskaper som ikke fanges opp av variabler)", QVariant.String),
+	("Usikkerhetsbeskrivelse (faglig usikkerhet til identifisering av Naturtype eller fastsetting av lokalitetskvalitet)", QVariant.String),
+	("Merknad (publiseres ikke)", QVariant.String)
+]
+
+# Get the active layer
+layer = iface.activeLayer()
+
+# Start editing the layer
+layer.startEditing()
+
+# Add new fields
+for field_name, field_type in fields_to_add:
+    layer.addAttribute(QgsField(field_name, field_type))
+
+# Commit changes
+layer.commitChanges()

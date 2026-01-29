@@ -1,0 +1,2 @@
+1, "ingen til svaert liten andel doed ved (trinn 0-2) og mye mindre enn forventet i skog med naturlig dynamikk"
+2, "liten til svaert stor andel doed ved (trinn 3-6 eller minst 1/16) og mindre enn forventet til forventet kun i nylig naturlig forstyrret skog" 
